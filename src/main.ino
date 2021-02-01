@@ -5,7 +5,9 @@ void setup(){
 
 
 void loop(){
-	if (Serial&&millis()%1000==0){
-		Serial.println(millis()/1000);
+	if (Serial){
+		if (Serial.available()>0){
+			Serial.print((char)Serial.read());
+		}
 	}
 }
